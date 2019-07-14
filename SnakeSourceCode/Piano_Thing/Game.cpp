@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "SceneManager.h"
+
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Window* Game::window = nullptr;
 SDL_Event Game::event;
@@ -98,6 +99,7 @@ void Game::clean()
 void Game::handleEvents()
 {
 	SDL_PollEvent(&Game::event);
+
 
 	switch (Game::event.type)
 	{
