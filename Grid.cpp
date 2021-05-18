@@ -1,7 +1,7 @@
-#include "stdafx.h"
 #include "Grid.h"
 #include "Snek.h"
 #include "fruit.h"
+#include <sstream>
 Snek* Snake = nullptr;
 fruit* Fruit = nullptr;
 

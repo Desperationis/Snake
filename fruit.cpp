@@ -1,6 +1,7 @@
-#include "stdafx.h"
 #include "fruit.h"
 #include "Snek.h"
+#include <math.h>
+
 SDL_Texture* fruit::texture;
 fruit::~fruit()
 {

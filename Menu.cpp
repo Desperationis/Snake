@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Menu.h"
 #include <iostream>
 Text* Title = nullptr;

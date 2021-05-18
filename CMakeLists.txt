@@ -27,7 +27,6 @@ target_sources(output
 		piece.cpp
 		SceneManager.cpp
 		Snek.cpp
-		stdafx.cpp
 		Text.cpp
 		TextureManager.cpp
 		Wall.cpp		

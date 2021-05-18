@@ -1,6 +1,8 @@
 #pragma once
 #include "TextureManager.h"
 #include "Grid.h"
+#include <cstdio>
+#include <ctime>
 
 class piece; //I think this is forward declaration used to avoid circular dependencies
 class fruit

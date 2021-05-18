@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "piece.h"
 
 SDL_Texture* piece::Head;

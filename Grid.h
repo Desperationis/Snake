@@ -1,6 +1,8 @@
 #pragma once
 #include "Game.h"
 #include "Wall.h"
+#include <vector>
+
 class Grid
 {
 public:

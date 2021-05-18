@@ -3,6 +3,8 @@
 #include "Input.h"
 #include "fruit.h"
 #include "Wall.h"
+#include <vector>
+#include <deque>
 
 class Snek
 {

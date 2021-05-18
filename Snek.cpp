@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Snek.h"
 
 void Snek::add_piece(int x, int y,int id)
