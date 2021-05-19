@@ -40,7 +40,6 @@ Game::Game()
 void init_()
 {
 	sceneManager.init();
-	SDL_SetWindowTitle(Game::window, "SneK");
 	SetSDLIcon(Game::window);
 }
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
