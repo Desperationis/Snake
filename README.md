@@ -27,6 +27,6 @@ After that, create a folder named `SDL_FULL` in the root directory of this proje
 * Move all the .dll files into a separate folder at the root of the project; This is where your executable will run. 
 
 ## Compiling
-To compile this project, you need to use CMake and your prefered compiler to generate a x86 version of your solution / executable. In some compilers and IDE's more work is needed, such as in Visual Studio where you have to manually specicify the library path of SDL as being `SDL_FULL/x86`.
+To compile this project, you need to use CMake and your prefered compiler to generate a x86 version of your solution / executable. In some compilers and IDE's more work is needed, such as in Visual Studio where you have to manually specify the library path of SDL as being `SDL_FULL/x86` with an architecture of `Win32`.
 
-After this, the compiled executable must be put into ANY folder in the root directory along with the aforementioned .dll files of SDL2. After this, you can run the game :)
+After this, the compiled executable must be put into ANY folder in the root directory of the project along with the aforementioned .dll files of SDL2. After this, you can run the game :)
