@@ -76,7 +76,8 @@ void Game::free() {
 }
 
 void Game::handleEvents() {
-	SDL_PollEvent(&Game::event);
-	if(Game::event.type == SDL_QUIT)
-		isRunning = false;
+	while(SDL_PollEvent(&Game::event)) {
+		if(Game::event.type == SDL_QUIT)
+			isRunning = false;
+	}
 }
