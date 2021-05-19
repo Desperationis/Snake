@@ -1,2 +1,5 @@
-
-/.vs/
+*.swp
+**output
+build/
+.cache/
+compile_commands.json
