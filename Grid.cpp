@@ -132,7 +132,8 @@ void Grid::Restart()
 	Fruit->clean();
 	delete Snake;
 	delete Fruit;
-	Snake->init();
 	Snake = new Snek(TILESIZE);
 	Fruit = new fruit(TILESIZE);
+	Snake->init();
+	Fruit->LoadImage();
 }
