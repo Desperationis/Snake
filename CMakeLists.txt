@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
+set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
+
 project(Snake VERSION 1.0) # Set variable PROJECT_NAME
 
 add_executable(output) # Create a executable from main.cpp
