@@ -47,5 +47,5 @@ void fruit::teleport(const std::vector<piece>& list)
 
 void fruit::LoadImage()
 {
-	texture = TextureManager::LoadTexture("assests/Fruits/Fruit_3.png");
+	texture = TextureManager::LoadTexture("../assests/Fruits/Fruit_3.png");
 }

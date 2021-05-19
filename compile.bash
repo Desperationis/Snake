@@ -18,7 +18,7 @@ fi
 if make
 then
 	mv compile_commands.json ../
-	mv output ../
+	mv output ../executable
 	echo "Compilation done."
 fi
 

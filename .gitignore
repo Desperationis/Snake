@@ -1,5 +1,6 @@
 *.swp
-**output
 build/
 .cache/
 compile_commands.json
+SDL_FULL/
+executable/

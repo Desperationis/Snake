@@ -100,7 +100,7 @@ void Grid::init()
 {
 	Snake->init();
 	Fruit->LoadImage();
-	font = TTF_OpenFont("fonts/ka1.ttf", 30);
+	font = TTF_OpenFont("../fonts/ka1.ttf", 30);
 	UpdateScore();
 	temp = Snake->length();
 }

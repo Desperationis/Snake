@@ -66,9 +66,9 @@ void Menu::init()
 	{
 		buttons[i].init();
 	}
-	font = TTF_OpenFont("fonts/8bitoperator_jve.ttf", 30);
+	font = TTF_OpenFont("../fonts/8bitoperator_jve.ttf", 30);
 	SDL_SetRenderDrawColor(Game::renderer, light, light, light, 255);
-	background = TextureManager::LoadTexture("assests/Grey.png");
+	background = TextureManager::LoadTexture("../assests/Grey.png");
 	SDL_SetTextureAlphaMod(background, alpha);
 
 	Title->init(font);

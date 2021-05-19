@@ -72,11 +72,10 @@ void piece::render()
 
 void piece::init()
 {
-	Head=TextureManager::LoadTexture("assests/SnakePieces/Head.png");
-	Straight = TextureManager::LoadTexture("assests/SnakePieces/StraightPiece.png");
-	Curved = TextureManager::LoadTexture("assests/SnakePieces/CurvedPiece.png");
-	Curved2 = TextureManager::LoadTexture("assests/SnakePieces/CurvedPiece2.png");
-	//Tail = TextureManager::LoadTexture("assests/RED.png");
+	Head=TextureManager::LoadTexture("../assests/SnakePieces/Head.png");
+	Straight = TextureManager::LoadTexture("../assests/SnakePieces/StraightPiece.png");
+	Curved = TextureManager::LoadTexture("../assests/SnakePieces/CurvedPiece.png");
+	Curved2 = TextureManager::LoadTexture("../assests/SnakePieces/CurvedPiece2.png");
 }
 
 void piece::SetOrientation(char id)
