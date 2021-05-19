@@ -35,8 +35,6 @@ int main(int argc, char* argv[])
 
 		elapsedTime = SDL_GetTicks() - frameStart;
 
-		std::cout<<game.running()<<std::endl;
-		
 		// Delay frame for x milliseconds while taking into account execution
 		// time. 
 		if (FRAME_DELAY > elapsedTime)

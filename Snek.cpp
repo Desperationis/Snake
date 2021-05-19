@@ -26,6 +26,7 @@ Snek::Snek(const int tile)
 {
 	srand(static_cast<unsigned int>(time(0)));
 	TILESIZE = tile;
+	current_pieces = 0;
 	add_piece(3 * TILESIZE, 15 * TILESIZE,HEAD);
 	Angles.push_front(RIGHT);
 }
