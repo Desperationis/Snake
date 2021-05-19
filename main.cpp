@@ -23,9 +23,8 @@ int main(int argc, char* argv[])
 	const int FRAME_DELAY = 1000 / FPS; // In milliseconds
 	Uint32 frameStart, elapsedTime;
 
-	Game game;
+	Game game("Snake", 800, 800, false);
 
-	game.init("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, false);
 	while (game.running())
 	{
 		frameStart = SDL_GetTicks();
@@ -35,6 +34,8 @@ int main(int argc, char* argv[])
 		game.render();
 
 		elapsedTime = SDL_GetTicks() - frameStart;
+
+		std::cout<<game.running()<<std::endl;
 		
 		// Delay frame for x milliseconds while taking into account execution
 		// time. 
@@ -44,7 +45,7 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	game.clean();
+	game.free();
 
 	return 0;
 }

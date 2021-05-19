@@ -17,79 +17,66 @@
 
 #include "Game.h"
 #include "SceneManager.h"
+#include <cstdio>
 
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Window* Game::window = nullptr;
 SDL_Event Game::event;
 SceneManager sceneManager;
 
-Game::Game()
-{
-}
-
-void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
-{
-
-	int flags = 0;
-	if (fullscreen)
-	{
-		flags = SDL_WINDOW_FULLSCREEN;
+Game::Game(const char* windowTitle, int width, int height, bool fullscreen) {
+	int sdlInitCode = SDL_Init(SDL_INIT_EVERYTHING);
+	int ttfCode = sdlInitCode == 0 ? TTF_Init() : 1;
+	
+	if (sdlInitCode == 0 && ttfCode == 0)
+		printf("SDL and True Type Initialized.\n");
+	else {
+		printf("ERROR: SDL and True Type could not be initialized.\n");
+		throw std::exception();
 	}
-	if (SDL_Init(SDL_INIT_EVERYTHING) ==0)
-	{
-		std::cout << "SDL Initialized" << std::endl;
-		if (TTF_Init() == 0)
-		{
-			std::cout << "True type initialized" << std::endl;
-		}
-		window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
-		if (window)
-		{
-			std::cout << "Window Created" << std::endl;
-		}
 
-		renderer = SDL_CreateRenderer(window, -1, 0);
-		if (renderer)
-		{
-			SDL_SetRenderDrawColor(renderer,0,0,0, 255);
-			std::cout << "Renderer Created" << std::endl;
-		}
-		isRunning = true;
+	window = SDL_CreateWindow(windowTitle, 
+			SDL_WINDOWPOS_CENTERED, 
+			SDL_WINDOWPOS_CENTERED, 
+			width, 
+			height, 
+			fullscreen ? SDL_WINDOW_FULLSCREEN : 0
+		);
+
+	renderer = SDL_CreateRenderer(window, -1, 0);
+
+	if(window != nullptr && renderer != nullptr)
+		printf("Created SDL Window and Renderer.\n");
+	else {
+		printf("ERROR: SDL Window and Renderer could not be initialized.\n");
+		throw std::exception();
 	}
-	else { isRunning = false; };
+
+	SDL_SetRenderDrawColor(renderer,0,0,0, 255);
+	isRunning = true;
+
 	sceneManager.init();
 }
 
-void Game::update()
-{
+void Game::update() {
 	sceneManager.update();
 }
-void Game::render()
-{
+
+void Game::render() {
 	SDL_RenderClear(renderer);
 	sceneManager.render();
 	SDL_RenderPresent(renderer);
 }
-void Game::clean()
-{
 
-
+void Game::free() {
 	sceneManager.clean();
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
 }
-void Game::handleEvents()
-{
+
+void Game::handleEvents() {
 	SDL_PollEvent(&Game::event);
-
-
-	switch (Game::event.type)
-	{
-	case SDL_QUIT:
+	if(Game::event.type == SDL_QUIT)
 		isRunning = false;
-		break;
-	default:
-		break;
-	}
 }

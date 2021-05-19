@@ -24,12 +24,11 @@
 class Game
 {
 public:
-	Game();
-	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
+	Game(const char* windowTitle, int width, int height, bool fullscreen);
 	void handleEvents();
 	void update();
 	void render();
-	void clean();
+	void free();
 	bool running() { return isRunning; };
 	static SDL_Renderer *renderer;
 	static SDL_Window *window;

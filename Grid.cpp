@@ -115,6 +115,8 @@ void Grid::clean()
 	Fruit->clean();
 	delete Snake;
 	delete Fruit;
+	Snake = nullptr;
+	Fruit = nullptr;
 
 
 	walls.clear();
@@ -126,8 +128,11 @@ void Grid::clean()
 
 void Grid::Restart()
 {
+	Snake->clean();
+	Fruit->clean();
 	delete Snake;
 	delete Fruit;
+	Snake->init();
 	Snake = new Snek(TILESIZE);
 	Fruit = new fruit(TILESIZE);
 }

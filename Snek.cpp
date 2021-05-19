@@ -99,7 +99,7 @@ void Snek::update(fruit& Fruit, std::vector<Wall>& walls)
 {
 	
 
-	if (delay(Delay) && !Dead)
+	if (Snek::delay(Delay) && !Dead)
 	{
 		Delay = 70;
 		Textures.push_front(STRAIGHT);
