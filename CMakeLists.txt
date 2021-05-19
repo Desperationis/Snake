@@ -31,7 +31,6 @@ target_sources(output
 		Snek.cpp
 		Text.cpp
 		TextureManager.cpp
-		Wall.cpp		
 		
 		)
 
