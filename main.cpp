@@ -1,36 +1,33 @@
-
 #include "Game.h"
-
-Game *game = nullptr;
 
 int main(int argc, char* argv[])
 {
 	const int FPS = 60;
-	const int frameDelay = 1000 / FPS;
+	const int FRAME_DELAY = 1000 / FPS; // In milliseconds
+	Uint32 frameStart, elapsedTime;
 
-	Uint32 frameStart;
-	int frameTime;
+	Game game;
 
-	game = new Game();
-
-	game->init("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, false);
-	while (game->running())
+	game.init("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, false);
+	while (game.running())
 	{
-
 		frameStart = SDL_GetTicks();
 
-		game->handleEvents();
-		game->update();
-		game->render();
+		game.handleEvents();
+		game.update();
+		game.render();
 
-		frameTime = SDL_GetTicks() - frameStart;
-		if (frameDelay > frameTime)
+		elapsedTime = SDL_GetTicks() - frameStart;
+		
+		// Delay frame for x milliseconds while taking into account execution
+		// time. 
+		if (FRAME_DELAY > elapsedTime)
 		{
-			SDL_Delay(frameDelay - frameTime);
+			SDL_Delay(FRAME_DELAY - elapsedTime);
 		}
 	}
 
-	game->clean();
+	game.clean();
 
 	return 0;
 }
