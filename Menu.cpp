@@ -20,12 +20,14 @@
 Text* Title = nullptr;
 Text* Author = nullptr;
 Text* Start = nullptr;
+Text* Github = nullptr;
 SDL_Rect tempDest;
 Menu::Menu()
 {
 	Title = new Text("Snake",400- static_cast<int>(325/2), 10, 5, Title_Color);
-	Author = new Text("By Deigo", 690,760,1, Title_Color);
+	Author = new Text("By Diego C", 670,760,1, Title_Color);
 	Start = new Text("START", 240, 310,5, Start_Color);
+	Github = new Text("https://github.com/Desperationis/Snake", 10, 763, 1, Title_Color); 
 	buttons.push_back(Button(106,300,600,200,""));
 	
 }
@@ -55,6 +57,7 @@ void Menu::render()
 	Title->render();
 	Author->render();
 	Start->render();
+	Github->render();
 }
 
 void Menu::init()
@@ -71,6 +74,7 @@ void Menu::init()
 	Title->init(font);
 	Author->init(font);
 	Start->init(font);
+	Github->init(font);
 }
 
 void Menu::update(int &scene)
