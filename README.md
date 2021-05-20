@@ -11,7 +11,7 @@ This is the very first official game I have ever developed back in 2018 as a sta
 This project uses CMake in order to generate a make file. Install CMake through whatever means necessary, though the easiest would be using `sudo apt-get install cmake` on the command line. 
 
 ## Compiling
-To compile this project simply run `installSDL.bash` to download the required dependencies then `compile.bash` to compile an executable into `build/`. It's as easy as that! 
+To compile this project simply run `installSDL.bash` to download the required dependencies then `compile.bash` to compile an executable into `executable/`. It's as easy as that! 
 
 NOTE: Even if you have SDL installed on your system via `sudo apt-get install libsdl2-2.0`, you still have to run `installSDL.bash` as this project installs SDL only in its root directory, not the system. 
 
