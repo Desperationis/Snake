@@ -1,7 +1,7 @@
 # Snake
 ![Preview of game](preview/Snake.gif)
 
-A simple game of snake in C++ and SDL featuring absolutely nothing new. 
+A simple game of snake in C++ and [SDL](https://www.libsdl.org/) featuring absolutely nothing new. 
 
 ## Why this exists
 This is the very first official game I have ever developed back in 2018 as a starter project. Most of the code and its bad practices remains unchanged due to laziness and its historical significance, though the project structure has been completely revamped to automatically install SDL dependencies for Linux, work with CMake, and officially have a GNU GPL v3 License.
