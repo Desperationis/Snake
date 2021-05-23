@@ -29,11 +29,6 @@ if(UNIX)
 endif()
 
 
-link_directories(output
-		PUBLIC
-		./SDL_FULL/x86/
-		)
-
 target_sources(output 
 		PUBLIC 
 		main.cpp
